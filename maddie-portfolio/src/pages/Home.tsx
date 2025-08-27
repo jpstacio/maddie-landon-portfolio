@@ -1,82 +1,99 @@
-import "./../styles/home.css";
-import ProjectCard from "../components/ProjectCard";
-
-export default function Home(){
+// src/pages/Home.tsx
+export default function Home() {
   return (
     <main>
       {/* Hero */}
-// inside <section className="section"> ... </section> for the hero
-<div className="container twocol">
-  <img src="/portrait.jpg" alt="Maddie portrait" className="card" />
-  <div>
-    <div className="stack-tight" style={{ margin: 0 }}>
-      <div className="display" style={{ color: "var(--green)" }}>DESIGN</div>
-      <div className="display outline">PORTFOLIO</div>
-    </div>
+      <section className="section">
+        <div className="container twocol">
+          {/* Left: portrait */}
+          <img src="/standing-portrait.png" alt="Maddie portrait" className="card hero-img" />
 
-    {/* Lede matches About’s style */}
-    <p className="lede" style={{ marginTop: 12 }}>
-      Hello, I’m Maddie, a recent BFA Graphic Design graduate from Central Washington University!
-    </p>
+          {/* Right: heading + copy */}
+          <div>
+            <div className="stack-tight" style={{ margin: 0 }}>
+              <div className="display" style={{ color: "var(--green)" }}>DESIGN</div>
+              <div className="display outline">PORTFOLIO</div>
+            </div>
 
-    {/* Body copy block matches About */}
-    <div className="body muted">
-      <p>
-        While I’m a recent graduate, I have years of experience building relationships, multi-tasking,
-        and strong communication skills. I’ve taken art classes since middle school and use this passion
-        to drive my career in graphic design.
-      </p>
-    </div>
+            <p className="lede" style={{ marginTop: 12 }}>
+              Hello, I’m Maddie, a recent BFA Graphic Design graduate from Central Washington University!
+            </p>
 
-    <div style={{ display: "flex", gap: 12, marginTop: 18 }}>
-      <a className="btn outline" href="/about">Learn More</a>
-      <a className="btn" href="/projects">Projects</a>
+            <div className="body muted">
+              <p>
+                While I’m a recent graduate, I have years of experience building relationships with customers and coworkers,
+                multi-tasking, and strong communication skills. I’ve taken art classes since middle school as it’s always
+                been a hobby of mine and I use this passion to drive my career in graphic design.
+              </p>
+            </div>
+
+            <div style={{ display: "flex", gap: 12, marginTop: 18 }}>
+              <a className="btn outline" href="/about">Learn More</a>
+              <a className="btn" href="/projects">Projects</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EXPLORE band */}
+      <section className="section explore-band">
+        <div className="container">
+          <div className="explore-row">
+            <div className="display" style={{ color: "var(--green)" }}>EXPLORE</div>
+            <div className="display outline">BRANDING/LOGO</div>
+            <div className="display outline">UI/UX DESIGN</div>
+            <div className="display outline">ADVERTISING</div>
+            <div className="display outline">MOTION/VIDEO</div>
+            <div className="display outline">EDITORIAL</div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED PROJECTS + EXPERIENCE */}
+  {/* FEATURED PROJECTS + EXPERIENCE */}
+<section className="section">
+  <div className="container">
+    <h2 className="stack-tight" style={{margin:0, marginBottom:24}}>
+      <span className="display" style={{color:"var(--green)", display:"block"}}>FEATURED</span>
+      <span className="display outline" style={{display:"block"}}>PROJECTS</span>
+    </h2>
+
+    <div className="featured-wrap">
+      {/* Left: grid (2 columns, equal spacing) */}
+      <div className="projects-grid-2x3">
+        <a className="tile wide"   href="#"><img src="/slipknot.png" alt="Slip Shop"/><div className="title">SLIP SHOP</div></a>
+        <a className="tile square" href="#"><img src="/analogue-trash.png" alt="Analogue Trash"/><div className="title">ANALOGUE TRASH</div></a>
+        <a className="tile wide"   href="#"><img src="/marias.png" alt="The Marías—Submarine"/><div className="title">THE MARIAS — SUBMARINE</div></a>
+        <a className="tile tall"   href="#"><img src="/aviation.png" alt="Aviation Poster"/><div className="title">AVIATION POSTER</div></a>
+        <a className="tile square" href="#"><img src="/campus-cruiser.png" alt="Campus Cruiser"/><div className="title">CAMPUS CRUISER</div></a>
+        <a className="tile square" href="https://behance.net/" target="_blank" rel="noreferrer">
+          <img src="/proj-6.jpg" alt="More Work"/><div className="title">MORE WORK →</div>
+        </a>
+      </div>
+
+      {/* Right: Experience column that matches the grid height visually */}
+      <aside className="experience">
+        <div className="label">EXPERIENCE</div>
+        <div className="card">
+          <p className="muted">
+            During my 6 months working on <strong>PULSE</strong>, an award-winning student run magazine,
+            I ideated and designed spreads for stories while incorporating feedback from an art director.
+          </p>
+          <p className="muted">
+            Check out the spreads:
+            {" "}<a href="#" target="_blank" rel="noreferrer">Winter 2025 Edition</a>,
+            {" "}<a href="#" target="_blank" rel="noreferrer">Spring 2025 Edition</a>.
+          </p>
+          <p className="muted">
+            During my graphic design internship at <strong>Yakima Valley College</strong>, I gained
+            experience working with clients and multiple projects under tight deadlines. I used Microsoft
+            PowerPoint, Word, Canva, Adobe Creative Cloud, and Adobe Premiere Pro.
+          </p>
+        </div>
+      </aside>
     </div>
   </div>
-</div>
-
-
-      {/* Explore */}
-      <section className="section">
-        <div className="container">
-          <div className="kicker">EXPLORE</div>
-          <div className="huge outline" style={{fontSize:"clamp(22px,3.2vw,38px)", marginTop:8}}>
-            BRANDING/LOGO &nbsp; UI/UX DESIGN &nbsp; ADVERTISING &nbsp; MOTION/VIDEO &nbsp; EDITORIAL
-          </div>
-        </div>
-      </section>
-
-      {/* Featured + Experience */}
-      <section className="section">
-        <div className="container grid" style={{gridTemplateColumns:"2fr 1fr", alignItems:"start"}}>
-          {/* Grid of projects */}
-          <div className="grid" style={{gridTemplateColumns:"repeat(2, 1fr)"}}>
-            <ProjectCard image="/proj-1.jpg" title="SLIP SHOP"/>
-            <ProjectCard image="/proj-2.jpg" title="ANALOGUE TRASH"/>
-            <ProjectCard image="/proj-3.jpg" title="THE MARIAS — Submarine"/>
-            <ProjectCard image="/proj-4.jpg" title="AVIATION POSTER"/>
-            <ProjectCard image="/proj-5.jpg" title="CAMPUS CRUISER"/>
-            <ProjectCard image="/proj-6.jpg" title="MORE WORK →"/>
-          </div>
-
-          {/* Experience column */}
-          <aside style={{position:"relative"}}>
-            <div className="huge kicker" style={{writingMode:"vertical-rl", transform:"rotate(180deg)", position:"absolute", left:"-40px", top:0}}>
-              EXPERIENCE
-            </div>
-            <div className="card" style={{padding:20, marginLeft:24}}>
-              <p className="muted"><strong>PULSE (student-run magazine)</strong><br/>
-                6-month role ideating and designing spreads while incorporating feedback from an art director.
-                Check out the spreads: <a href="#" style={{color:"var(--green)"}}>Winter 2025 Edition</a>, <a href="#" style={{color:"var(--green)"}}>Spring 2025 Edition</a>.
-              </p>
-              <p className="muted"><strong>Yakima Valley College</strong><br/>
-                Graphic design internship working with clients and tight deadlines. Comfortable with Microsoft
-                tools, Canva, Adobe Creative Cloud & Premiere Pro.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </section>
+</section>
     </main>
   );
 }
